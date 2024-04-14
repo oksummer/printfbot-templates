@@ -1,0 +1,305 @@
+common:
+    btn:
+        cancel: |
+            {{UN('CROSS MARK','WORD JOINER')}} 取消
+        back: |
+            ↩️
+    cancelled: |
+        🔹 已取消。接下来怎么办？
+    noposts: |
+        🔹 您没有帖子。{{UN('THINKING FACE')}}
+    notfound: |
+        此帖子已删除或已发布。
+    unknown: |
+        🤔 不明白。请选择菜单中的命令。
+    langname: |
+        ᴄɴ 中文
+    
+home:
+    welcome: |
+        🔸 @printfbot v{{version}} - <b>发布帖子的瑞士军刀</b>。
+
+        发送给我一个新帖子。您可以发送文本、照片、音频、视频、语音或贴纸。
+
+        已选择<b>{{user.parse_mode}}</b>格式模式。您可以选择/html、/markdown或/native模式。
+
+post:
+    kb:
+        reactions: |
+            {{UN('THUMBS UP SIGN')}} 添加反应
+        remove_reactions: |
+            {{UN('THUMBS UP SIGN')}} 删除反应
+        keyboard: |
+            {{UN('KEYBOARD')}} 添加键盘
+        remove_keyboard: |
+            {{UN('KEYBOARD')}} 删除键盘
+        attach: |
+            {{UN('HANDBAG')}} 添加附件
+        remove_attach: |
+            {{UN('HANDBAG')}} 删除附件
+        caption: |
+            {{UN('KEYBOARD')}} 编辑标题
+        text: |
+            📝 修改文本
+        media: |
+            🌅 替换媒体
+        wppreview: |
+            {{UN('EYES')}} 预览: {%if post.data.wppreview%}开启.{%else%}关闭.{%endif%}
+        repost: |
+            ↪️ 允许转发: {%if repost%}开启.{%else%}关闭.{%endif%}
+        delete: |
+            {{UN('WASTEBASKET')}} 删除
+        publish: |
+            {{UN('OUTBOX TRAY')}} 发布
+        edit: |
+            🖌️ 编辑
+        save: |
+            💾 保存
+        revert: |
+            ⤴️ 恢复
+    error: |
+        🔹 发送帖子时出错。很可能是格式错误。
+            
+        <code>{{error}}</code>
+        
+        🔹 请纠正错误后重新发送帖子。
+    notsupport: |
+        🔹 机器人不支持此类型消息。 😔
+    edit: |
+        ⚠️ 注意!
+
+        正在编辑帖子时，新的反应会被处理，但帖子不会更新！
+
+        编辑完成后，反应将被更新。
+    list: |
+        🔹 您最近发布的帖子:
+    wait: |
+        🔸 帖子正在更新中，请稍候几秒钟。
+    edited: |
+        🔹 帖子已保存。
+
+        内容和反应将在稍后更新。
+        
+format:
+    html: |
+        🔹 您选择了 <b>html</b> 模式。
+        
+        <b>加粗</b>
+        <code>&lt;b&gt;加粗&lt;/b&gt; 或 &lt;strong&gt;加粗&lt;/strong&gt;</code>
+        
+        <i>斜体</i>
+        <code>&lt;i&gt;斜体&lt;/i&gt; 或 &lt;em&gt;斜体&lt;/em&gt;</code>
+        
+        <a href="http://www.example.com/">带标题的链接</a>
+        <code>&lt;a href="http://www.example.com/"&gt;带标题的链接&lt;/a&gt;</code>
+        
+        <code>等宽文本</code>
+        <code>&lt;code&gt;等宽文本&lt;/code&gt;</code>
+        
+        <pre>等宽文本块</pre>
+        <code>&lt;pre&gt;等宽文本块&lt;/pre&gt;</code>
+    markdown: |
+        🔹 您选择了 <b>markdown</b> 模式。
+        
+        <b>加粗</b>
+        <code>*加粗*</code>
+        
+        <i>斜体</i>
+        <code>_斜体_</code>
+        
+        <a href="http://www.example.com/">带标题的链接</a>
+        <code>[带标题的链接](http://www.example.com/)</code>
+        
+        <code>等宽文本</code>
+        <code>\`等宽文本\`</code>
+        
+        <pre>等宽文本块</pre>
+        <code>```等宽文本块```</code>
+    native: |
+        🔹 您选择了 <b>native</b> 模式。使用此模式可以在客户端或从其他地方转发格式化文本时进行格式化。
+        
+reactions:
+    set: |
+        🔹 请选择下方最近使用的按钮或发送新按钮以将反应添加到帖子中。
+
+        若要创建文本按钮，请用<b>"|"</b>分隔它们。
+
+        每行可以添加<b>一到六个</b>按钮，且不超过<b>六行</b>。
+    notfound: |
+        🔹 格式不正确。
+        每行可以添加<b>一到六个</b>按钮，且不超过<b>六行</b>。
+    toomany: |
+        🔹 按钮过多。
+        每行可以添加<b>一到六个</b>按钮，且不超过<b>六行</b>。
+    saved: |
+        🔹 反应已保存。
+    removed: |
+        反应已移除。
+
+caption:
+    kb:
+        delete: |
+            {{UN('WASTEBASKET','WORD JOINER')}} 删除标题。
+    set: |
+        🔹 发送标题文字或删除标题:
+    error: |
+        🔹 标题错误。很可能是格式错误。
+        {%if error%}
+        <code>{{error}}</code>
+        {%endif%}
+
+        请纠正格式后重新发送标题。
+    deleted: |
+        🔹 标题已删除。
+    saved: |
+        🔹 标题已保存。
+
+keyboard:
+    set: |
+        🔹 发送键盘以按照以下格式添加到帖子中：
+
+        <code>标题 = http://example.com/</code>
+
+        若要添加转发按钮，请发送：
+
+        <code>转发 = 转发</code>
+
+        您可以添加<b>一到十二</b>个按钮。
+    toomany: |
+        🔹 按钮过多。
+        您可以添加<b>一到十二</b>个按钮。
+    error: |
+        🔹 键盘错误。很可能是格式错误。
+        {%if error%}
+        <code>{{error}}</code>
+        {%endif%}
+
+        请修正格式后重新发送帖子。
+    saved: |
+        🔹 键盘已保存。
+    removed: |
+        键盘已移除。
+
+
+attach:
+    set: |
+        🔹 发送图片或链接以附加到帖子中：
+
+        <code>https://example.com/</code>
+    error: |
+        🔹 添加错误。您只能附加图片或链接。
+    saved: |
+        🔹 已附加！
+    removed: |
+        附件已移除。
+
+media:
+    set: |
+        🔹 发送新的媒体文件：
+    error: |
+        🔹 您只能替换媒体为图片、音频、文档、动画或视频。
+
+        请重新发送媒体。
+    saved: |
+        🔹 新的媒体已保存。
+
+text:
+    set: |
+        🔹 发送新的帖子文本：
+    error: |
+        🔹 您只能用文本替换文本帖子。
+
+        请重新发送文本。
+    saved: |
+        🔹 新的文本已保存。
+
+publish:
+    kb:
+        share: |
+            {{UN('PAGE WITH CURL')}} 发送...
+    published: |
+        ✅ 您的帖子已准备好发布。现在您可以将它们发送到您的群组或频道中。
+
+vote: 
+    processed: |
+        {%if remove%}您的投票已移除。{%else%}您的投票已接受。{%endif%}
+        {%if later%} 帖子将在稍后更新。{%endif%}
+    notfound: |
+        未找到或已删除的帖子。抱歉！{{UN('PENSIVE FACE')}}
+        
+delete: 
+    deleted: |
+        帖子已删除。{{UN('PENSIVE FACE')}} 
+    deletedall: |
+        🔹 您的帖子已全部删除。{{UN('PENSIVE FACE')}}
+        
+inline:
+    new: |
+        写一个新帖子。
+    post: |
+        {%if emojis%}
+        发送带 {{emojis|join(' / ')}} 的内容
+        {%else%}
+        发送
+        {%endif%}
+    error: |
+        格式错误。请转到机器人以获取说明。
+    share:
+        text: |
+            发送您的帖子。
+        document: |
+            发送您的文档。
+        animation: |
+            发送您的动画。
+        video: |
+            发送您的视频。
+        sticker: |
+            发送您的贴纸。
+        voice: |
+            发送您的语音消息。
+
+settings:
+    kb:
+        lang: |
+            {{UN('GLOBE WITH MERIDIANS')}} 机器人语言
+        format: |
+            {{UN('MEMO')}} 模式：{{user.parse_mode}}
+        reactions: |
+            {{UN('THUMBS UP SIGN')}} 默认反应
+        delreactions: |
+            {{UN('THUMBS UP SIGN')}} 删除反应
+        keyboard: |
+            {{UN('KEYBOARD')}} 默认键盘
+        delkeyboard: |
+            {{UN('KEYBOARD')}} 删除键盘
+        wppreview: |
+            {{UN('EYES')}} 预览：{%if user.default_wppreview%}启用{%else%}禁用{%endif%}
+        repost: |
+            ↪️ 允许转发：{%if user.default_repost%}启用{%else%}禁用{%endif%}
+
+    title: |
+        设置。选择您要更改的设置：
+    lang:
+        select: |
+            目前我正在用中文和您交流。您想选择哪种语言？
+        selected: |
+            太好了。现在我将用汉语和您交流！👌
+            
+    reactions: |
+        🔹 从下面选择最近使用的按钮或发送新的按钮以添加默认反应。
+
+        要创建文本按钮，请使用<b>"|"</b>符号分隔它们。
+
+        每行可以添加<b>一个</b>到<b>六个</b>按钮，一共不超过<b>六行</b>。
+    keyboard: |
+        🔹 按照以下格式发送要添加的键盘作为默认键盘：
+        
+        <code>Caption = http://example.com/</code>
+
+        要添加转发按钮，请发送：
+
+        <code>Repost = REPOST</code>
+        
+        您可以添加<b>一个</b>到<b>12个</b>按钮。
+    keyboardpreview: |
+        键盘预览...
